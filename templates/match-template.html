@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{META_DESC}}">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><img class="logo-img" src="../assets/logo.png" alt="SportsAICall"><span>SportsAICall</span></a>
+    <nav class="main">
+      <a href="../index.html#matches">Matches</a>
+      <a href="../how-it-works.html">How It Works</a>
+      <a href="../index.html#track-record">Track Record</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" style="max-width:800px;">
+
+    {{REVIEWED_BADGE}}
+
+    <p class="eyebrow" style="color:var(--text-muted); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; font-family:'Barlow Condensed',sans-serif; font-weight:700;">
+      {{SERIES}} &middot; {{MATCH_LABEL}} &middot; {{DATE_LABEL}}
+    </p>
+    <h1 style="font-size:2.1rem; margin-bottom:0.4rem; text-transform:none; font-family:'Manrope',sans-serif; font-weight:700;">{{TEAM_A}} vs {{TEAM_B}}</h1>
+    <p style="color:var(--text-muted); margin-bottom:1.8rem;">Venue: {{VENUE}} &middot; {{DATE_LABEL}}</p>
+
+    <section>
+      <div class="ai-tag">AI Match Outlook</div>
+      <div class="match-card" style="cursor:default;">
+        <div class="outlook-bars" style="margin-top:0.4rem;">
+          <div class="outlook-row" style="color:var(--text); font-size:1.1rem;">
+            <span class="name">{{TEAM_A_SHORT}}</span>
+            <span class="track" style="background:var(--surface-alt);"><span class="fill" style="width:{{PROB_A}}%; background:var(--sports-green);"></span></span>
+            <span class="pct">{{PROB_A}}%</span>
+          </div>
+          <div class="outlook-row" style="color:var(--text); font-size:1.1rem;">
+            <span class="name">{{TEAM_B_SHORT}}</span>
+            <span class="track" style="background:var(--surface-alt);"><span class="fill" style="width:{{PROB_B}}%; background:var(--earth-brown);"></span></span>
+            <span class="pct">{{PROB_B}}%</span>
+          </div>
+        </div>
+        <p style="margin:0;">AI Confidence: <span class="pill {{CONFIDENCE_CLASS}}">{{CONFIDENCE}}</span>{{CONFIDENCE_NOTE_LINE}}</p>
+      </div>
+    </section>
+
+{{EDGE_SECTION}}
+
+{{INSIGHTS_SECTION}}
+
+{{KEY_STAT_SECTION}}
+
+{{MATCHUP_SECTION}}
+
+{{FLIP_SECTION}}
+
+{{AI_VS_REALITY_SECTION}}
+
+    <div class="callout risk">
+      <span class="tag">Reminder</span>
+      <p>This is AI-assisted sports analysis and editorial opinion — not a betting tip, not a guarantee. See <a href="../how-it-works.html">how the analysis engine works</a>.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="disclaimer">&copy; <span id="y"></span> SportsAICall.com — AI-assisted sports analysis and editorial opinion. Not betting or fantasy advice.</div>
+    <nav><a href="../index.html">Home</a></nav>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
