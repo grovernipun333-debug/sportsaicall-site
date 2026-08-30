@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SportsAICall — AI Cricket Match Analysis</title>
+<meta name="description" content="AI-assisted match analysis for upcoming cricket matches — outlook, key matchups, and the numbers behind the game. Then we check ourselves publicly after.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img class="logo-img" src="assets/logo.png" alt="SportsAICall"><span>SportsAICall</span></a>
+    <nav class="main">
+      <a href="#matches">Matches</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="#track-record">Track Record</a>
+    </nav>
+  </div>
+</header>
+
+{{HERO_SECTION}}
+
+<main>
+  <div class="wrap">
+
+{{SPOTTED_SECTION}}
+
+{{KEY_STAT_SECTION}}
+
+{{MATCHUP_SECTION}}
+
+{{FLIP_SECTION}}
+
+{{MORE_MATCHES_SECTION}}
+
+    <section id="track-record">
+      <div class="kicker"><span class="num">—</span><h2>The AI Track Record</h2></div>
+{{TRACK_RECORD_SECTION}}
+    </section>
+
+    <section>
+      <div class="kicker"><span class="num">—</span><h2>What SportsAICall Actually Is</h2></div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="num">01</div>
+          <h3>Analysis, not a tip</h3>
+          <p>Every AI Call is our read on the match — an editorial view backed by statistical analysis, not a betting tip or a guaranteed outcome.</p>
+        </div>
+        <div class="feature">
+          <div class="num">02</div>
+          <h3>Match Edge, stated plainly</h3>
+          <p>We express the outlook as a probability split and flag our AI Confidence — high, medium, or low — depending on how much reliable data we have going in.</p>
+        </div>
+        <div class="feature">
+          <div class="num">03</div>
+          <h3>Graded in public</h3>
+          <p>After every match, we check the AI Call against what actually happened — including when it missed. See the <a href="#track-record">track record</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="callout risk">
+        <span class="tag">Please read</span>
+        <p>SportsAICall publishes AI-assisted sports analysis and editorial opinion for entertainment and informational purposes. We are not a betting or fantasy-sports advisory service and do not sell tips or picks. Read the full <a href="how-it-works.html">methodology and disclaimer</a>.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="disclaimer">&copy; <span id="y"></span> SportsAICall.com — AI-assisted sports analysis and editorial opinion.</div>
+    <nav>
+      <a href="how-it-works.html">How it works</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
