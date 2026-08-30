@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Our Analysis Works — SportsAICall</title>
+<meta name="description" content="The methodology behind SportsAICall's cricket match analysis: what goes into every probability, and what it isn't.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"></span><span>SportsAICall</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html" class="active">How Our Analysis Works</a>
+      <a href="matches/india-vs-bangladesh-2026-odi1.html">Latest Match</a>
+      <a href="how-it-works.html#track-record">Track Record</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section>
+      <div class="kicker"><span class="num">—</span><h2>How our analysis works</h2></div>
+      <p>SportsAICall publishes our opinion on upcoming cricket matches, informed by AI-driven statistical analysis. This page explains exactly what that means in practice — and just as importantly, what it doesn't mean.</p>
+    </section>
+
+    <section>
+      <div class="kicker"><span class="num">01</span><h2>What goes into every analysis</h2></div>
+      <p>For every match we cover, our process looks at the same set of inputs, weighted by how relevant they are to that specific game:</p>
+      <div class="feature-grid">
+        <div class="feature"><h3>Recent form</h3><p>Each team's performance over their last 5–10 matches, not season-long averages that hide a hot or cold streak.</p></div>
+        <div class="feature"><h3>Head-to-head record</h3><p>How these two sides have matched up historically, and in this format specifically.</p></div>
+        <div class="feature"><h3>Venue &amp; conditions</h3><p>Pitch tendencies at the ground, and how each side's strengths suit them.</p></div>
+        <div class="feature"><h3>Toss impact</h3><p>How much winning the toss typically matters at this venue and format.</p></div>
+        <div class="feature"><h3>Squad &amp; injuries</h3><p>Confirmed playing XI where available, and the impact of any injuries or late changes.</p></div>
+        <div class="feature"><h3>Home / away</h3><p>Where the match is being played, and each side's track record in these conditions.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker"><span class="num">02</span><h2>How we present it</h2></div>
+      <p>Every match write-up follows the same structure, on purpose — so it's easy to compare across matches and easy to check our work later:</p>
+      <ul>
+        <li><strong>An opinion statement</strong> in plain language — our read on the match in one or two sentences.</li>
+        <li><strong>A probability split</strong> — e.g. Team A 60% / Team B 40% — never a flat "X will win."</li>
+        <li><strong>The top reasons</strong> behind that view, drawn from the inputs above.</li>
+        <li><strong>A confidence flag</strong> — <span class="pill high">High</span> <span class="pill medium">Medium</span> <span class="pill low">Low</span> — that drops whenever key information is missing, unusual, or unconfirmed (a brand-new playing XI, an unfamiliar venue, a long injury layoff).</li>
+      </ul>
+    </section>
+
+    <section id="track-record">
+      <div class="kicker"><span class="num">03</span><h2>Our track record</h2></div>
+      <div class="callout">
+        <span class="tag">Coming soon</span>
+        <p>After every match we cover, we'll publish how our analysis compared to the actual result — publicly, including when we get it wrong. That log will live here. We're starting it from our very first published match, not waiting until the numbers look good.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker"><span class="num">04</span><h2>What this isn't</h2></div>
+      <div class="callout risk">
+        <span class="tag">Important</span>
+        <p>This is editorial sports analysis and opinion, not betting or fantasy-sports advice. We don't sell "tips" or "picks," and a probability is not a promise — sport is uncertain, and our confidence flag exists specifically to be honest about how much (or little) we actually know going into a match.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="disclaimer">&copy; <span id="y"></span> SportsAICall.com — AI-informed sports analysis and opinion.</div>
+    <nav><a href="index.html">Home</a></nav>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
