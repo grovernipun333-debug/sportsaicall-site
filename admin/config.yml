@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: grovernipun333-debug/sportsaicall-site
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://sportsaicall.com
+display_url: https://sportsaicall.com
+
+collections:
+  - name: "matches"
+    label: "Matches"
+    label_singular: "Match"
+    folder: "content/matches"
+    create: true
+    slug: "{{fields.team_a}}-vs-{{fields.team_b}}-{{fields.date_sort}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    summary: "{{team_a}} vs {{team_b}} — {{match_label}} ({{date_label}})"
+    sortable_fields: ["date_sort", "reviewed"]
+    fields:
+      - { label: "Reviewed (match already played?)", name: "reviewed", widget: "boolean", default: false, hint: "Turn this on once the match is done — it makes the AI vs Reality section show on the site." }
+      - { label: "Series / tour name", name: "series", widget: "string", hint: "e.g. India tour of Bangladesh · ODI Series" }
+      - { label: "Match label", name: "match_label", widget: "string", hint: "e.g. 1st ODI, 2nd T20I, Final" }
+      - { label: "Team A", name: "team_a", widget: "string" }
+      - { label: "Team A short code", name: "team_a_short", widget: "string", required: false, hint: "e.g. IND" }
+      - { label: "Team B", name: "team_b", widget: "string" }
+      - { label: "Team B short code", name: "team_b_short", widget: "string", required: false, hint: "e.g. BAN" }
+      - { label: "Venue", name: "venue", widget: "string", required: false, default: "TBC" }
+      - { label: "Date shown on site", name: "date_label", widget: "string", hint: "e.g. September 2026 (date & venue TBC)" }
+      - { label: "Date for sorting/countdown", name: "date_sort", widget: "date", format: "YYYY-MM-DD", hint: "Real or best-guess date — controls ordering and the homepage countdown." }
+      - { label: "Team A win probability (%)", name: "prob_a", widget: "number", value_type: "int", min: 1, max: 99, default: 50 }
+      - { label: "Confidence", name: "confidence", widget: "select", options: ["Low", "Medium", "High"], default: "Medium" }
+      - { label: "Confidence note", name: "confidence_note", widget: "string", required: false, hint: "e.g. playing XIs and toss not yet known" }
+
+      - label: "The Edges"
+        name: "edges"
+        widget: "list"
+        required: false
+        hint: "Short head-to-head comparisons shown as cards (Form Edge, Venue Fit, etc.)"
+        fields:
+          - { label: "Label", name: "label", widget: "string", hint: "e.g. Form Edge, Venue Fit, Batting Depth" }
+          - { label: "Value", name: "value", widget: "string", hint: "e.g. India, Even, Bangladesh" }
+
+      - label: "AI Spotted This (insights)"
+        name: "insights"
+        widget: "list"
+        required: false
+        field: { label: "Insight", name: "insight", widget: "text" }
+
+      - { label: "Key stat — big number", name: "key_stat_value", widget: "string", required: false, hint: "e.g. 7 of 9" }
+      - { label: "Key stat — explanation", name: "key_stat_text", widget: "text", required: false }
+      - { label: "Key stat — note", name: "key_stat_note", widget: "string", required: false }
+
+      - label: "Matchups AI is watching"
+        name: "matchups"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Player A", name: "player_a", widget: "string" }
+          - { label: "Player B", name: "player_b", widget: "string" }
+          - { label: "Note", name: "note", widget: "text" }
+
+      - label: "What could flip the AI call?"
+        name: "flip_factors"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Label", name: "label", widget: "string", hint: "e.g. Toss, Playing XI, Weather" }
+          - { label: "Text", name: "text", widget: "text" }
+
+      - { label: "What could change (fallback, used only if no flip factors above)", name: "what_could_change", widget: "text", required: false }
+
+      - label: "AI vs Reality (fill in after the match, once Reviewed is on)"
+        name: "ai_vs_reality"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "What AI saw", name: "ai_saw", widget: "text" }
+          - { label: "What actually happened", name: "actual", widget: "text" }
+          - { label: "Verdict", name: "verdict", widget: "select", options: ["Held up", "Mixed", "Missed"] }
+
+      - { label: "Extra notes (internal, optional)", name: "body", widget: "markdown", required: false }
