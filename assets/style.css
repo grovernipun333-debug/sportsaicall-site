@@ -1,0 +1,113 @@
+/* SportsAICall — shared styles */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#F2F4EE;
+  --surface:#FFFFFF;
+  --surface-alt:#E7EBE0;
+  --text:#1C231D;
+  --text-muted:#5B6358;
+  --accent:#2F6B4F;
+  --accent-ink:#1D4735;
+  --accent-soft:#E1EDE4;
+  --risk:#B23A2E;
+  --risk-soft:#F6E4E1;
+  --border:#D9DECF;
+  --shadow: 0 1px 2px rgba(28,35,29,0.06), 0 8px 24px rgba(28,35,29,0.05);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  line-height:1.65;
+}
+h1,h2,h3,.eyebrow,.tag,nav a,.btn{
+  font-family:'Barlow Condensed','Arial Narrow',sans-serif;
+}
+code,.mono,.tabular{ font-family:'IBM Plex Mono','SF Mono',Consolas,monospace; font-variant-numeric:tabular-nums; }
+
+.wrap{ max-width:1040px; margin:0 auto; padding:0 1.5rem; }
+
+/* header / nav */
+header.site{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:10;
+}
+header.site .wrap{ display:flex; align-items:center; justify-content:space-between; padding-top:0.9rem; padding-bottom:0.9rem; }
+.logo{ display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:var(--text); }
+.logo .mark{ width:1.6rem; height:1.6rem; border-radius:4px; background:var(--accent); display:inline-block; }
+.logo span{ font-weight:700; font-size:1.25rem; letter-spacing:0.01em; }
+nav.main{ display:flex; gap:1.6rem; }
+nav.main a{ color:var(--text-muted); text-decoration:none; font-weight:600; font-size:1rem; letter-spacing:0.02em; }
+nav.main a:hover, nav.main a.active{ color:var(--accent-ink); }
+
+/* hero */
+.hero{ background:linear-gradient(180deg, var(--accent-ink), var(--accent)); color:#F4F8F4; padding:3.4rem 0 3rem; }
+.hero .eyebrow{ font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:#CFEBDA; font-weight:600; margin:0 0 0.7rem; }
+.hero h1{ font-size:clamp(2rem,5vw,2.9rem); font-weight:700; line-height:1.06; margin:0 0 0.9rem; color:#fff; max-width:34rem; }
+.hero p{ font-family:'Source Serif 4',serif; font-size:1.08rem; color:#DCEEE2; max-width:38rem; margin:0 0 1.6rem; }
+.hero-actions{ display:flex; gap:0.9rem; flex-wrap:wrap; }
+
+.btn{ display:inline-block; padding:0.65rem 1.3rem; border-radius:7px; font-weight:600; font-size:1.02rem; text-decoration:none; letter-spacing:0.02em; }
+.btn.primary{ background:#fff; color:var(--accent-ink); }
+.btn.ghost{ background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.5); }
+.btn.primary:hover{ background:#EAF4EC; }
+.btn.ghost:hover{ background:rgba(255,255,255,0.2); }
+
+/* sections */
+main{ padding:3rem 0; }
+section{ margin-bottom:3.2rem; }
+section .kicker{ display:flex; align-items:baseline; gap:0.6rem; margin-bottom:1.2rem; }
+.kicker .num{ font-weight:700; font-size:1.5rem; color:var(--accent); line-height:1; }
+h2{ font-size:1.5rem; font-weight:600; margin:0; letter-spacing:-0.01em; }
+h3{ font-size:1.05rem; font-weight:600; margin:0 0 0.4rem; }
+p{ margin:0 0 1rem; max-width:64ch; }
+a{ color:var(--accent-ink); text-decoration-color:var(--border); text-underline-offset:2px; }
+
+/* match cards */
+.match-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+.match-card{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.2rem 1.3rem; box-shadow:var(--shadow); text-decoration:none; color:var(--text); display:block; }
+.match-card:hover{ border-color:var(--accent); }
+.match-card .series{ font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem; }
+.match-card h3{ font-size:1.2rem; margin-bottom:0.3rem; }
+.match-card .meta{ font-size:0.85rem; color:var(--text-muted); margin-bottom:0.7rem; }
+.match-card .prob{ display:flex; gap:0.5rem; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:0.85rem; }
+.bar{ flex:1; height:6px; border-radius:3px; background:var(--surface-alt); overflow:hidden; display:flex; }
+.bar span{ display:block; height:100%; }
+.bar .a{ background:var(--accent); }
+.bar .b{ background:var(--border); }
+
+/* callout / disclaimer */
+.callout{ background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:1rem 1.3rem; box-shadow:var(--shadow); }
+.callout.risk{ border-left-color:var(--risk); }
+.callout .tag{ display:inline-block; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-ink); background:var(--accent-soft); padding:0.15rem 0.55rem; border-radius:4px; margin-bottom:0.6rem; }
+.callout.risk .tag{ color:var(--risk); background:var(--risk-soft); }
+.callout p:last-child{ margin-bottom:0; }
+
+/* three-up feature grid */
+.feature-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.1rem; }
+.feature{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.2rem 1.3rem; box-shadow:var(--shadow); }
+.feature .num{ font-family:'Barlow Condensed',sans-serif; font-weight:700; color:var(--accent); font-size:1.4rem; }
+
+/* confidence pill */
+.pill{ display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:0.15rem 0.6rem; border-radius:999px; }
+.pill.high{ background:var(--accent-soft); color:var(--accent-ink); }
+.pill.medium{ background:#FBF0D9; color:#8A5A00; }
+.pill.low{ background:var(--risk-soft); color:var(--risk); }
+
+/* sample banner for template pages */
+.sample-banner{ background:var(--risk-soft); color:var(--risk); border:1px dashed var(--risk); border-radius:8px; padding:0.8rem 1.1rem; font-family:'IBM Plex Mono',monospace; font-size:0.85rem; margin-bottom:1.6rem; }
+
+footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--text-muted); font-size:0.88rem; }
+footer.site .wrap{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center; }
+footer.site a{ color:var(--text-muted); }
+footer.site .disclaimer{ max-width:60ch; font-size:0.82rem; }
+
+@media (max-width:640px){
+  nav.main{ display:none; }
+}
